@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "vue": "^2.5.11"
   },
   "browserslist": [
@@ -25,7 +27,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
-    "file-loader": "^1.1.4",
+    "file-loader": "^1.1.11",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "vue-loader": "^13.0.5",
