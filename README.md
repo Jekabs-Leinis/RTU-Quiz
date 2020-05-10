@@ -1,18 +1,3 @@
-# quiz
+# Vue 2 application with webpack 4 boilerplate
 
-> Grupas darbs Web izstrādē
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+This repo is a support for [this article](https://medium.com/js-dojo/how-to-configure-webpack-4-with-vuejs-a-complete-guide-209e943c4772) published on Medium
