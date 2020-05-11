@@ -1,19 +1,21 @@
 <template>
     <div class="container" id="quiz">
-        <quiz-interface v-if="!isQuizCompleted" :quiz="quiz" @quiz-completed="saveAnswers"/>
-        <quiz-results v-else-if="isQuizCompleted" :answers="answers"/>
+        <quiz-start v-if="!isQuizStarted && !isQuizCompleted" @quiz-start="startQuiz"/>
+        <quiz-interface v-else-if="isQuizStarted && !isQuizCompleted" :quiz="quiz" @quiz-completed="saveAnswers"/>
+        <quiz-results v-else @restart="restartQuiz" :answers="answers"/>
     </div>
 </template>
 
 <script>
     import QuizInterface from '@/components/Quiz';
     import QuizResults from '@/components/QuizResults';
+    import QuizStart from '@/components/QuizStart';
     import { Quiz } from '@/models/quiz.models';
     
 
     export default {
         name: 'App',
-        components: { QuizResults, QuizInterface },
+        components: { QuizStart, QuizResults, QuizInterface },
         data () {
             return {
                 quiz: Quiz.fromObject({
@@ -58,13 +60,21 @@
                     ]
                 }),
                 answers: [],
+                isQuizStarted: false,
                 isQuizCompleted: false,
             };
         },
         methods: {
+            startQuiz() {
+                this.isQuizStarted = true;
+            },
             saveAnswers (answers) {
                 this.answers = answers;
                 this.isQuizCompleted = true;
+            },
+            restartQuiz() {
+                this.isQuizStarted = false;
+                this.isQuizCompleted = false;
             }
         },
         computed: {}
