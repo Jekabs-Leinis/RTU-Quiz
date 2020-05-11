@@ -1,76 +1,74 @@
 <template>
     <div class="container" id="quiz">
-        <div class="row">
-            <div class="col-12">
-                {{currentQuestion.text}}
-            </div>
-            <div class="col-6" v-for="answer in currentQuestion.answers">
-                {{answer.text}}
-            </div>
-        </div>
+        <quiz-interface v-if="!isQuizCompleted" :quiz="quiz" @quiz-completed="saveAnswers"/>
+        <quiz-results v-else-if="isQuizCompleted" :answers="answers"/>
     </div>
 </template>
 
 <script>
-    import {Quiz} from './models/quiz.models';
+    import QuizInterface from '@/components/Quiz';
+    import QuizResults from '@/components/QuizResults';
+    import { Quiz } from '@/models/quiz.models';
     
+
     export default {
         name: 'App',
-        data() {
+        components: { QuizResults, QuizInterface },
+        data () {
             return {
-                currentQuestionIndex: 0,
                 quiz: Quiz.fromObject({
-                    name: "Test",
+                    name: 'Test',
                     questions: [
                         {
-                            text: "Q1",
+                            text: 'Q1',
                             answers: [
-                                {text: "R1", isCorrect: true},
-                                {text: "W1", isCorrect: false},
-                                {text: "W2", isCorrect: false},
-                                {text: "W3", isCorrect: false},
+                                { text: 'R1', isCorrect: true },
+                                { text: 'W1', isCorrect: false },
+                                { text: 'W2', isCorrect: false },
+                                { text: 'W3', isCorrect: false },
                             ]
                         },
                         {
-                            text: "Q2",
+                            text: 'Q2',
                             answers: [
-                                {text: "R1", isCorrect: true},
-                                {text: "W1", isCorrect: false},
-                                {text: "W2", isCorrect: false},
-                                {text: "W3", isCorrect: false},
+                                { text: 'R1', isCorrect: true },
+                                { text: 'W1', isCorrect: false },
+                                { text: 'W2', isCorrect: false },
+                                { text: 'W3', isCorrect: false },
                             ]
                         },
                         {
-                            text: "Q3",
+                            text: 'Q3',
                             answers: [
-                                {text: "R1", isCorrect: true},
-                                {text: "W1", isCorrect: false},
-                                {text: "W2", isCorrect: false},
-                                {text: "W3", isCorrect: false},
+                                { text: 'R1', isCorrect: true },
+                                { text: 'W1', isCorrect: false },
+                                { text: 'W2', isCorrect: false },
+                                { text: 'W3', isCorrect: false },
                             ]
                         },
                         {
-                            text: "Q4",
+                            text: 'Q4',
                             answers: [
-                                {text: "R1", isCorrect: true},
-                                {text: "W1", isCorrect: false},
-                                {text: "W2", isCorrect: false},
-                                {text: "W3", isCorrect: false},
+                                { text: 'R1', isCorrect: true },
+                                { text: 'W1', isCorrect: false },
+                                { text: 'W2', isCorrect: false },
+                                { text: 'W3', isCorrect: false },
                             ]
                         },
                     ]
-                })
-            }
+                }),
+                answers: [],
+                isQuizCompleted: false,
+            };
         },
         methods: {
-
-        },
-        computed: {
-            currentQuestion() {
-                return this.quiz.questions[this.currentQuestionIndex]
+            saveAnswers (answers) {
+                this.answers = answers;
+                this.isQuizCompleted = true;
             }
-        }
-    }
+        },
+        computed: {}
+    };
 </script>
 
 <style lang="scss">

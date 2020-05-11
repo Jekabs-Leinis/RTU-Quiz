@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 // Import Vue App, routes, store
 import App from './App';
 import routes from './routes';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 Vue.use(VueRouter);
 
