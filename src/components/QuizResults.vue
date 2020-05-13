@@ -18,7 +18,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="btn btn-outline-primary" @click="restart">Start again!</div>
+                    <div @click="restart" class="btn btn-outline-primary">Start again!</div>
                 </div>
             </div>
         </div>
@@ -35,8 +35,8 @@
             },
         },
         methods: {
-            restart() {
-                this.$emit('restart')
+            restart () {
+                this.$emit('restart');
             }
         },
         computed: {

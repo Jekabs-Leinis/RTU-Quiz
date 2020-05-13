@@ -20,6 +20,7 @@
   "homepage": "https://github.com/samteb/vue-2-webpack-4-boilerplate",
   "dependencies": {
     "@babel/polyfill": "~7.2",
+    "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
@@ -37,6 +38,7 @@
     "babel-eslint": "~10.0",
     "babel-loader": "~8.0",
     "compression-webpack-plugin": "~2.0",
+    "copy-webpack-plugin": "^5.1.1",
     "cross-env": "~5.2",
     "css-loader": "~2.1",
     "eslint": "~5.16",

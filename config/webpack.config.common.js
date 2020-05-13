@@ -3,7 +3,8 @@
 const VueLoaderPlugin      = require('vue-loader/lib/plugin');
 const HtmlPlugin           = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
-const helpers              = require('./helpers');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const helpers = require('./helpers');
 const isDev                = process.env.NODE_ENV === 'development';
 
 const webpackConfig = {
@@ -57,7 +58,10 @@ const webpackConfig = {
     },
     plugins: [
         new VueLoaderPlugin(),
-        new HtmlPlugin({ template: 'index.html', chunksSortMode: 'dependency' })
+        new HtmlPlugin({ template: 'index.html', chunksSortMode: 'dependency' }),
+        new CopyWebpackPlugin([
+            { from: 'src/quizzes', to: 'quizzes' }
+        ])
     ]
 };
 
