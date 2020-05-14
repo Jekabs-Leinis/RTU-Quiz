@@ -24,8 +24,7 @@
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "vue": "~2.6",
-    "vue-router": "~3.0"
+    "vue": "~2.6"
   },
   "devDependencies": {
     "@babel/core": "~7.2",

@@ -31,7 +31,7 @@
                 this.$emit('quiz-start', this.quiz);
             },
             loadQuiz () {
-                axios.get(`/quizzes/${this.selectedQuizUrl}.json`, {})
+                axios.get(`quizzes/${this.selectedQuizUrl}.json`, {})
                     .then(response => {
                         try {
                             this.quiz = JSON.parse(response.data);
