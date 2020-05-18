@@ -2,7 +2,7 @@
     <div class="container" id="quiz">
         <quiz-start @quiz-start="startQuiz" v-if="!isQuizStarted && !isQuizCompleted"/>
         <quiz-interface :quiz="quiz" @quiz-completed="saveAnswers" v-else-if="isQuizStarted && !isQuizCompleted"/>
-        <quiz-results :answers="answers" @restart="restartQuiz" v-else/>
+        <quiz-results :quiz="quiz" :answers="answers" @restart="restartQuiz" v-else/>
     </div>
 </template>
 

@@ -6,10 +6,10 @@ class Quiz {
     /** @type {Question[]} */
     questions;
 
-    static fromObject(arr) {
-        const quiz = _.assign(new Quiz(), arr);
-        if (arr.questions) {
-            quiz.questions = arr.questions.map(Question.fromObject)
+    static fromObject (obj) {
+        const quiz = _.assign(new Quiz(), obj);
+        if (obj.questions) {
+            quiz.questions = obj.questions.map(Question.fromObject);
         }
 
         return quiz;
@@ -19,13 +19,22 @@ class Quiz {
 class Question {
     /** @type {String} */
     text;
-    /** @type {Answer[]} */
+    /** @type {String} */
+    image;
+    /** @type {String} */
+    video;
+    /** @type {?Answer[]} */
     answers;
+    /** @type {?Answer} */
+    answer;
 
-    static fromObject(arr) {
-        const question = _.assign(new Quiz(), arr);
-        if (arr.answers) {
-            question.answers = arr.answers.map(Answer.fromObject)
+    static fromObject (obj) {
+        const question = _.assign(new Quiz(), obj);
+        if (obj.answers) {
+            question.answers = obj.answers.map(Answer.fromObject);
+        }
+        if (obj.answer) {
+            question.answer = Answer.fromObject(obj.answer);
         }
 
         return question;
@@ -36,15 +45,33 @@ class Answer {
     /** @type {String} */
     text;
     /** @type {Boolean} */
-    isCorrect;
+    points;
 
-    static fromObject(arr) {
-        return _.assign(new Answer(), arr);
+    static fromObject (obj) {
+        return _.assign(new Answer(), obj);
+    }
+}
+
+class QuizStat {
+    /** @type {String} */
+    quizName;
+    /** @type {Number} */
+    totalQuestions;
+    /** @type {Number} */
+    correctQuestions;
+    /** @type {Number} */
+    timeTaken;
+    /** @type {Date} */
+    date;
+
+    static fromObject (obj) {
+        return _.assign(new QuizStat(), obj);
     }
 }
 
 export {
     Quiz,
     Question,
-    Answer
-}
+    Answer,
+    QuizStat
+};

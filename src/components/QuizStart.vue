@@ -13,6 +13,7 @@
 </template>
 
 <script>
+    import { Quiz } from '@/models/quiz.models';
     import axios from 'axios';
 
     export default {
@@ -34,7 +35,7 @@
                 axios.get(`quizzes/${this.selectedQuizUrl}.json`, {})
                     .then(response => {
                         try {
-                            this.quiz = JSON.parse(response.data);
+                            this.quiz = Quiz.fromObject(response.data);
                         } catch (e) {
                             alert('Viss slikti');
                             console.log(e);
