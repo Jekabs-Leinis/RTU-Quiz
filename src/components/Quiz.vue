@@ -82,7 +82,7 @@
                 const answerCount = this.currentQuestion.answers.length;
 
                 return answerCount % 2 === 1 && index === answerCount - 1 ? 'col-12' : 'col-6';
-            }
+            },
         },
         computed: {
             currentQuestion () {

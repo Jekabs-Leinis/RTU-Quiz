@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row" v-if="stats.length">
         <div class="col-12">
             <table class="table table-striped">
                 <thead>
@@ -13,8 +13,8 @@
                 <tbody>
                     <tr v-for="quizStat in stats">
                         <td>{{quizStat.quizName}}</td>
-                        <td>{{quizStat.correctAnswers}} / {{quizStat.totalAnswers}}</td>
-                        <td>{{new Date(quizStat.timeTaken * 1000).toISOString().substr(11, 8)}}</td>
+                        <td>{{quizStat.correctQuestions}} / {{quizStat.totalQuestions}}</td>
+                        <td>{{new Date(quizStat.timeTaken * 1000).toISOString().substr(11, 12)}}</td>
                         <td>{{quizStat.date}}</td>
                     </tr>
                 </tbody>
@@ -24,14 +24,23 @@
 </template>
 
 <script>
+    import { QuizStat } from '@/models/quiz.models';
+
     export default {
         name: 'QuizStats',
         /** stats {QuizStat[]} */
-        props: {
-            stats: {
-                type: Array,
-                required: true
+        data () {
+            return {
+                stats: []
+            };
+        },
+        mounted () {
+            const stats = localStorage.getItem('quiz-stats');
+            if (!stats) {
+                return;
             }
+
+            this.stats = JSON.parse(stats).map(QuizStat.fromObject);
         }
     };
 </script>

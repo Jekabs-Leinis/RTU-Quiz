@@ -2,7 +2,8 @@
     <div class="container" id="quiz">
         <quiz-start @quiz-start="startQuiz" v-if="!isQuizStarted && !isQuizCompleted"/>
         <quiz-interface :quiz="quiz" @quiz-completed="saveAnswers" v-else-if="isQuizStarted && !isQuizCompleted"/>
-        <quiz-results :quiz="quiz" :answers="answers" @restart="restartQuiz" v-else/>
+        <quiz-results :quiz="quiz" :start-time="startTime" :end-time="endTime" :answers="answers" @restart="restartQuiz"
+                      v-else/>
     </div>
 </template>
 
@@ -20,14 +21,18 @@
                 answers: [],
                 isQuizStarted: false,
                 isQuizCompleted: false,
+                startTime: null,
+                endTime: null,
             };
         },
         methods: {
             startQuiz (quiz) {
+                this.startTime = new Date();
                 this.quiz = quiz;
                 this.isQuizStarted = true;
             },
             saveAnswers (answers) {
+                this.endTime = new Date();
                 this.answers = answers;
                 this.isQuizCompleted = true;
             },
