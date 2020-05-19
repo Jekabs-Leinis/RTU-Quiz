@@ -1,5 +1,13 @@
+$footer-height: 70px;
+
+$dark: rgb(12, 23, 19);
+$light: rgb(243, 243, 235);
+$red-accent: #EB5160;
+$yellow-accent: #FFF07C;
+$green-accent: #7DDF64;
+
 body {
-    background: white url('assets/background.jpg');
+    background: $light url('assets/background.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -8,25 +16,194 @@ body {
 
 #quiz {
     text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+    color: $dark;
 }
 
 .center-helper {
-    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-    min-height: 100vh; /* These two lines are counted as one :-)       */
-
+    min-height: 100%;  
+    min-height: 100vh; 
     display: flex;
     align-items: center;
-    padding-bottom: 100px;
+    padding-bottom: $footer-height;
 }
 
 .container--window {
     background-color: rgba(255,255,255,0.96);
-    border: 1px solid black;
+    border: 1px solid $dark;
     border-radius: 5px;
     -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
     padding: 20px;
+}
+
+.fixed-footer {
+    position: fixed;
+    width: 101%; /* this could be calc instead */
+    margin-right: -3px;
+    bottom: 0px;
+    right: 0px;
+    height: $footer-height;
+    border-radius: 0px;
+    background-color: $dark;
+    color: $light;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    text-align: center;
+}
+
+.fixed-footer--textmod {
+    background-color: rgba(12, 23, 19, 0.9);
+    padding-top: 20px;
+    font-variant: small-caps;
+    letter-spacing: 1.25px;
+}
+
+.progress-bar--clickable {
+    flex: 1 1 0;
+    min-width: 0px;
+    margin-right: 3px;
+    transition: flex 0.1s, min-width 0.4s, font-size 0.2s;
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+   font-size: 0em;
+}
+
+.progress-bar--clickable:hover {
+    flex: 1.5 1 0;
+    min-width: 300px;
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(255,255,255,1);
+    -moz-box-shadow: inset 0px 0px 5px 0px rgba(255,255,255,1);
+    box-shadow: inset 0px 0px 5px 0px rgba(255,255,255,1);
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.progress-bar--red {
+    background-color: $red-accent;
+    color: $light;
+}
+
+.progress-bar--yellow {
+    background-color: $yellow-accent;
+    color: $dark;
+}
+
+.progress-bar--green {
+    background-color: $green-accent;
+    color: $dark;
+}
+
+.progress-bar--epic {
+    background-color: $green-accent;
+    color: $dark;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.row--textfield {
+    background-color: $dark;
+    border: 1px solid $dark;
+    color: white;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: 15px;
+    padding: 20px;
+}
+
+.row--descriptionfield {
+    background-color: $dark;
+    border: 1px solid $dark;
+    border-top: 0px;
+    border-bottom: 2px solid $dark;
+    color: white;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.row--descriptionfield--green {
+    background-color: $green-accent;
+    color: $dark;
+}
+
+.row--descriptionfield--yellow {
+    background-color: $yellow-accent;
+    color: $dark;
+}
+
+.row--descriptionfield--red {
+    background-color: $red-accent;
+    color: $dark;
+}
+
+.row--buttonfield {
+    background-color: $dark;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 0px;
+    padding-bottom: 1px;
+}
+
+.row--answers-lower {
+    margin-top: 20px;
+}
+
+.btn--quiz {
+    background-color: $light;
+    border-radius: 0px;
+    padding: 15px;
+    border: 1px solid $dark;
+}
+
+.btn--quiz:hover {
+    background-color: $yellow-accent;
+}
+
+.btn--answers {
+    background-color: $light;
+    border-radius: 0px;
+    padding: 15px;
+    border: 1px solid $dark;
+}
+
+.btn--answers--green {
+    background-color: $green-accent;
+    color: $dark;
+}
+
+.btn--answers--yellow {
+    background-color: $yellow-accent;
+    color: $dark;
+}
+
+.btn--answers--red {
+    background-color: $red-accent;
+    color: $dark;
+}
+
+.btn--input {
+    background-color: $yellow-accent;
+    border-radius: 0px;
+}
+
+.btn--input:hover {
+    background-color: $red-accent;
+    border-radius: 0px;
+}
+
+.epic-and-cool-inputfield {
+    border-radius: 0px;
+    border: none;
+    color: $dark;
+}
+
+.epic-and-cool-inputfield--margin {
+    margin-bottom: 15px;
 }

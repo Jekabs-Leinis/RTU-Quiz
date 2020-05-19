@@ -15,6 +15,9 @@
         <div class="col-12 mt-4">
             <quiz-stats/>
         </div>
+        <div class="fixed-footer fixed-footer--textmod">
+            <span>Jēkabs Leinis, Rūdolfs Agris Stilve, Agnis Salmiņš priekš DIP221 Web-lietojumu izstrāde Internetam</span> <!-- JĀ ES ZINU KA ŠIS IR BRIESMĪGI UN NAV TAS KĀ TAS BŪTU JĀDARA -->
+        </div>
     </div>
 </template>
 

@@ -3,15 +3,15 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-12">
-                    <div class="progress">
-                        <div :style="{'width': progressPercent + '%'}" class="progress-bar progress-bar-striped"
+                    <div class="progress fixed-footer">
+                        <div :style="{'width': progressPercent + '%'}" class="progress-bar progress-bar--epic"
                              role="progressbar">{{progressPercent + '%'}}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row" v-if="currentQuestion.image || currentQuestion.video">
-                <div class="col-12 border border-dark">
+                <div class="col-12">
                     <img :src="currentQuestion.image" v-if="currentQuestion.image"/>
                     <iframe :src="currentQuestion.video"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -21,22 +21,26 @@
                             width="854"></iframe>
                 </div>
             </div>
-            <div class="row" v-if="currentQuestion.text">
-                <div class="col-12 border border-dark">
+            <div class="row row--textfield" v-if="currentQuestion.text">
+                <div class="col-12">
                     {{currentQuestion.text}}
                 </div>
             </div>
-            <div class="row p-3" v-if="currentQuestion.answers">
-                <div :class="getAnswerWidthClass(index)" @click="saveAnswer(answer)" class="btn btn-outline-dark"
+            <div class="row row--buttonfield" v-if="currentQuestion.answers">
+                <div :class="getAnswerWidthClass(index)" @click="saveAnswer(answer)" class="btn btn--quiz"
                      v-for="(answer, index) in currentQuestion.answers"
                 >
                     {{answer.text}}
                 </div>
             </div>
-            <div class="row p-2" v-else-if="currentQuestion.answer">
+            <div class="row row--buttonfield" v-else-if="currentQuestion.answer">
                 <div class="col-12">
-                    <input class="form-control" type="text" v-model="currentAnswer"/>
-                    <button @click="checkAnswer" class="btn btn-success">Iesniegt atbildi</button>
+                    <div class="input-group mb-3">
+                        <input class="form-control epic-and-cool-inputfield" type="text" v-model="currentAnswer"/>
+                        <div class="input-group-append">
+                            <button @click="checkAnswer" class="btn btn--input">Iesniegt atbildi</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

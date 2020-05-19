@@ -3,10 +3,10 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-12">
-                    <div class="progress">
+                    <div class="progress fixed-footer">
                         <div :class="getAnswerProgressClass(answer, index)"
                              :style="{'width': questionProgressWidth + '%'}"
-                             class="progress-bar progress-bar-striped progress-bar-animated"
+                             class="progress-bar progress-bar-animated progress-bar--clickable"
                              role="progressbar" v-for="(answer, index) in answers"
                              @click="currentQuestionIndex = index">
                             {{`${answer.points} / ${getQuestionMaxPoints(quiz.questions[index])}`}}
@@ -15,35 +15,35 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 border border-dark h2">
+                <div class="col-12 h2">
                     Pareizās atbildes: {{correctAnswers}} / {{quiz.questions.length}}
                 </div>
             </div>
             <div v-if="currentQuestion">
-                <div class="row" v-if="currentQuestion.text">
-                    <div class="col-12 border border-dark">
+                <div class="row row--textfield" v-if="currentQuestion.text">
+                    <div class="col-12">
                         {{currentQuestion.text}}
                     </div>
                 </div>
-                <div class="row p-3" v-if="currentQuestion.answers">
-                    <div class="btn" v-for="(answer, index) in currentQuestion.answers"
-                         :class="[`btn-outline-${getAnswerButtonClass(answer)}`, getAnswerWidthClass(index)]" disabled>
+                <div class="row row--buttonfield" v-if="currentQuestion.answers">
+                    <div class="btn--answers" v-for="(answer, index) in currentQuestion.answers"
+                         :class="[`btn--answers--${getAnswerButtonClass(answer)}`, getAnswerWidthClass(index)]" disabled>
                         {{answer.text}}
                     </div>
                 </div>
-                <div class="row p-2" v-else-if="currentQuestion.answer">
+                <div class="row row--buttonfield" v-else-if="currentQuestion.answer">
                     <div class="col-12">
-                        <input class="form-control" type="text" v-model="answers[currentQuestionIndex].text" disabled/>
+                        <input class="form-control epic-and-cool-inputfield epic-and-cool-inputfield--margin" type="text" v-model="answers[currentQuestionIndex].text" disabled/>
                     </div>
                 </div>
             </div>
-            <div v-if="answers[currentQuestionIndex].description" class="alert"
-                 :class="`alert-${getAnswerButtonClass(answers[currentQuestionIndex])}`">
+            <div v-if="answers[currentQuestionIndex].description" class="row row--descriptionfield"
+                 :class="`row--descriptionfield--${getAnswerButtonClass(answers[currentQuestionIndex])}`">
                 {{answers[currentQuestionIndex].description}}
             </div>
-            <div class="row">
+            <div class="row row--answers-lower">
                 <div class="col-12">
-                    <div @click="restart" class="btn btn-outline-primary">Uz sākumu!</div>
+                    <div @click="restart" class="btn btn--quiz">Uz sākumu!</div>
                 </div>
             </div>
         </div>
@@ -97,21 +97,21 @@
             },
             getAnswerProgressClass (answer, index) {
                 if (this.isAnswerMostValuable(answer, index)) {
-                    return 'bg-success';
+                    return 'progress-bar--green';
                 } else if (answer.points > 0) {
-                    return 'bg-warning';
+                    return 'progress-bar--yellow';
                 } else {
-                    return 'bg-danger';
+                    return 'progress-bar--red';
                 }
             },
             getAnswerButtonClass (answer) {
                 if (this.answers[this.currentQuestionIndex].text === answer.text) {
                     if (this.isAnswerMostValuable(answer, this.currentQuestionIndex)) {
-                        return 'success';
+                        return 'green';
                     } else if (this.answers[this.currentQuestionIndex].points > 0) {
-                        return 'warning';
+                        return 'yellow';
                     } else {
-                        return 'danger';
+                        return 'red';
                     }
                 }
 

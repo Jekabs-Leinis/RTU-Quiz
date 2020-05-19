@@ -8,7 +8,6 @@
         </div>
     </div>
 </template>
-
 <script>
     import QuizInterface from '@/components/Quiz';
     import QuizResults from '@/components/QuizResults';
