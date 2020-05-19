@@ -86,7 +86,7 @@
             stat.quizName = this.quiz.name;
             stat.correctQuestions = this.answers.filter(a => a.points > 0).length;
             stat.totalQuestions = this.quiz.questions.length;
-            stat.date = moment().format('YYYY-MM-DD 00:00:00.000');
+            stat.date = moment().format('YYYY-MM-DD h:mm:ss.SSS');
             stat.timeTaken = moment(this.endTime).diff(this.startTime) / 1000;
             stats.push(stat);
             localStorage.setItem('quiz-stats', JSON.stringify(stats));
