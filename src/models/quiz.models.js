@@ -60,6 +60,10 @@ class QuizStat {
     /** @type {Number} */
     correctQuestions;
     /** @type {Number} */
+    totalPoints;
+    /** @type {Number} */
+    correctPoints;
+    /** @type {Number} */
     timeTaken;
     /** @type {Date} */
     date;

@@ -6,6 +6,7 @@
                     <tr>
                         <th>Tests</th>
                         <th>Pareizās atbildes</th>
+                        <th>Punkti</th>
                         <th>Patērētais laiks</th>
                         <th>Datums</th>
                     </tr>
@@ -14,6 +15,7 @@
                     <tr v-for="quizStat in stats">
                         <td>{{quizStat.quizName}}</td>
                         <td>{{quizStat.correctQuestions}} / {{quizStat.totalQuestions}}</td>
+                        <td>{{quizStat.correctPoints}} / {{quizStat.totalPoints}}</td>
                         <td>{{new Date(quizStat.timeTaken * 1000).toISOString().substr(11, 12)}}</td>
                         <td>{{quizStat.date}}</td>
                     </tr>

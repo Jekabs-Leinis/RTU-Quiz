@@ -38,16 +38,17 @@ body {
 }
 
 .fixed-footer {
-    position: fixed;
-    width: 101%; /* this could be calc instead */
-    margin-right: -3px;
-    bottom: 0px;
-    right: 0px;
-    height: $footer-height;
-    border-radius: 0px;
-    background-color: $dark;
-    color: $light;
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  z-index: 99999;
+  position: fixed;
+  width: 101%; /* this could be calc instead */
+  margin-right: -3px;
+  bottom: 0px;
+  right: 0px;
+  height: $footer-height;
+  border-radius: 0px;
+  background-color: $dark;
+  color: $light;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     text-align: center;
@@ -95,25 +96,28 @@ body {
 
 .progress-bar--green {
     background-color: $green-accent;
-    color: $dark;
+  color: $dark;
 }
 
 .progress-bar--epic {
-    background-color: $green-accent;
-    color: $dark;
-    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-    font-size: 3em;
-    font-weight: bold;
+  background-color: $green-accent;
+  color: $dark;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.row--content {
+  max-height: 400px;
 }
 
 .row--textfield {
-    background-color: $dark;
-    border: 1px solid $dark;
-    color: white;
-    margin-left: -20px;
-    margin-right: -20px;
-    margin-top: 15px;
-    padding: 20px;
+  background-color: $dark;
+  border: 1px solid $dark;
+  color: white;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 20px;
 }
 
 .row--descriptionfield {

@@ -18,9 +18,12 @@
                 <div class="col-12 h2">
                     Pareizās atbildes: {{correctAnswers}} / {{quiz.questions.length}}
                 </div>
+                <div class="col-12 h2">
+                    Punkti: {{points}} / {{totalPoints}}
+                </div>
             </div>
             <div v-if="currentQuestion">
-                <div class="row row--textfield" v-if="currentQuestion.text">
+                <div class="row row--textfield mt-3" v-if="currentQuestion.text">
                     <div class="col-12">
                         {{currentQuestion.text}}
                     </div>
@@ -86,6 +89,8 @@
             stat.quizName = this.quiz.name;
             stat.correctQuestions = this.answers.filter(a => a.points > 0).length;
             stat.totalQuestions = this.quiz.questions.length;
+            stat.totalPoints = this.totalPoints;
+            stat.correctPoints = this.points;
             stat.date = moment().format('YYYY-MM-DD h:mm:ss.SSS');
             stat.timeTaken = moment(this.endTime).diff(this.startTime) / 1000;
             stats.push(stat);
@@ -135,6 +140,14 @@
                 const answerCount = this.currentQuestion.answers.length;
 
                 return answerCount % 2 === 1 && index === answerCount - 1 ? 'col-12' : 'col-6';
+            },
+            getMostValuableAnswer (question) {
+                if (question.answer) {
+                    return question.answer;
+                }
+                const maxPoints = Math.max(...question.answers.map(a => a.points));
+
+                return question.answers.find(a => a.points === maxPoints);
             }
         },
         computed: {
@@ -147,6 +160,12 @@
             questionProgressWidth () {
                 return 100 / this.answers.length;
             },
+            points () {
+                return this.answers.map(a => a.points).reduce((s, p) => s + p);
+            },
+            totalPoints () {
+                return this.quiz.questions.map(this.getMostValuableAnswer).map(a => a.points).reduce((s, p) => s + p);
+            }
         }
     };
 </script>
