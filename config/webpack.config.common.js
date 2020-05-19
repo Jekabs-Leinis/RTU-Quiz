@@ -53,7 +53,20 @@ const webpackConfig = {
                     { loader: 'css-loader', options: { sourceMap: isDev } },
                     { loader: 'sass-loader', options: { sourceMap: isDev } }
                 ]
-            }
+            },
+            {
+			test: /\.(png|svg|jpg|gif|jpe?g)$/,
+			use: [
+				{
+				options: {
+				    name: "[name].[contenthash].[ext]",
+				    outputPath: "images/",
+				    esModule: false
+				},
+				loader: "file-loader"
+				}
+			]
+		  }
         ]
     },
     plugins: [
