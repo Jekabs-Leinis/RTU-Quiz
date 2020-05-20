@@ -1,0 +1,353 @@
+{
+  "name": "Master Quiz",
+  "questions": [
+    {
+      "text": "3 + 3 x 3 - 3 + 3 = ? ",
+      "image": "quizzes/MasterQuiz/1jaut.jpg",
+      "description": "3. klases matemātika, aiziet!",
+      "answers": [
+        {
+          "text": "3",
+          "points": 0
+        },
+        {
+          "text": "6",
+          "points": 0
+        },
+        {
+          "text": "12",
+          "points": 1
+        },
+        {
+          "text": "18",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "text": "Sacensībās Lielpēdis apdzen 2. vietu. Kurā vietā tagad ir Lielpēdis?",
+      "image": "quizzes/MasterQuiz/2jaut.jpg",
+      "answers": [
+        {
+          "text": "0.",
+          "description": "Šī nav programmēšana!",
+          "points": 0
+        },
+        {
+          "text": "1.",
+          "description": "Viņš jau gribētu",
+          "points": 0
+        },
+        {
+          "text": "2.",
+          "description": "Tieši tā!",
+          "points": 1
+        },
+        {
+          "text": "3.",
+          "description": "Tas būtu skumji :(",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "text": "Janvāris = 818<br>Februāris = 9218<br>Marts = 5315<br>Jūnijs = 6636<br>Augusts = 7856<br>Aprīlis = ?",
+      "description": "Vārda garums, mēneša numurs un reizinājums",
+      "answer": {
+        "text": 7428,
+        "points": 1
+      }
+    },
+    {
+      "text": "",
+      "image": "quizzes/MasterQuiz/4jaut.jpg",
+      "description": "Tas bija pat pārāk vienkārši",
+      "answer": {
+        "text": 9,
+        "points": 1
+      }
+    },
+    {
+      "text": "Turpini: J,F,M,A,M,J,J,A,…",
+      "description": "Janvāris, Februāris, Marts…",
+      "answers": [
+        {
+          "text": "D,A,D",
+          "points": 0
+        },
+        {
+          "text": "S,O,N",
+          "points": 1
+        },
+        {
+          "text": "C,A,T",
+          "points": 0
+        },
+        {
+          "text": "D,O,G",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "text": "Kurš skaitlis mazāks par 100 pieaug par vienu piektdaļu, ja tā ciparus samaina vietām? ",
+      "description": "45 + 45/5 = 54",
+      "answer": {
+        "text": 45,
+        "points": 1
+      }
+    },
+    {
+      "text": "Atrodi lieko!",
+      "image": "quizzes/MasterQuiz/7jaut.png",
+      "description": "Tie visi ir atšķirīgi, tomēr viens ir atšķirīgāks",
+      "answers": [
+        {
+          "text": "1",
+          "points": 0
+        },
+        {
+          "text": "2",
+          "points": 0
+        },
+        {
+          "text": "3",
+          "points": 1
+        },
+        {
+          "text": "4",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "text": "Kurš bija augstākais kalns pasaulē pirms tika atklāts?",
+      "image": "quizzes/MasterQuiz/8jaut.jpg",
+      "description": "Kalns eksistēja arī pirms atklāšanas ;0",
+      "answers": [
+        {
+          "text": "Everests",
+          "points": 1
+        },
+        {
+          "text": "Makalu",
+          "points": 0
+        },
+        {
+          "text": "Kangchenjunga",
+          "points": 0
+        },
+        {
+          "text": "K2",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "text": "Turpini: V,D,T,Č,P,S,…",
+      "description": "Viens, Divi, Trīs, Četri…",
+      "answers": [
+        {
+          "text": "S,A,D",
+          "points": 1
+        },
+        {
+          "text": "B,A,D",
+          "points": 0
+        },
+        {
+          "text": "G,U,D",
+          "points": 0
+        },
+        {
+          "text": "S,U,N",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "text": "Gadā ir 12 mēneši. 7 mēneši satur 31 dienu. Cik mēneši satur 28 dienas?",
+      "image": "quizzes/MasterQuiz/10jaut.jpg",
+      "description": "Ja atmiņa neviļ, tad visi",
+      "answer": {
+        "text": 12,
+        "points": 1
+      }
+    },
+    {
+      "text": "",
+      "image": "quizzes/MasterQuiz/11jaut.jpg",
+      "description": "Pievērs uzmanību detaļām!",
+      "answer": {
+        "text": 43,
+        "description": "Malacis!",
+        "points": 1
+      }
+    },
+    {
+      "text": "Kola pudelē maksā 1.10 EUR. Cik maksā kola, ja pudele ir par 1 EUR dārgāka nekā kola?",
+      "image": "data:image/png;base64,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",
+      "description": "K + P = 1.10; P = K + 1 => K = (1.10 – 1)/2 = 0.05",
+      "answers": [
+        {
+          "text": "0.05",
+          "description": "Matemātika ir tava stiprā puse",
+          "points": 1
+        },
+        {
+          "text": "0.10",
+          "points": 0
+        },
+        {
+          "text": "0.90",
+          "points": 0
+        },
+        {
+          "text": "1.05",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "text": "Cik daudz kubikmetru zemes ir bedrē, kuras izmēri ir 2x2x4 metri?",
+      "image": "quizzes/MasterQuiz/13jaut.jpg",
+      "description": "Pašā bedrē zemes vairs nav",
+      "answers": [
+        {
+          "text": "0",
+          "description": "Gudrinieks!",
+          "points": 1
+        },
+        {
+          "text": "4",
+          "points": 0
+        },
+        {
+          "text": "8",
+          "points": 0
+        },
+        {
+          "text": "16",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "text": "Kādi ir nākamie divi burti secībā: K,I,N,D,…",
+      "description": "Kādi Ir Nākamie Divi Burti Secībā?",
+      "answers": [
+        {
+          "text": "J,K",
+          "points": 0
+        },
+        {
+          "text": "S,D",
+          "points": 0
+        },
+        {
+          "text": "K,I",
+          "points": 0
+        },
+        {
+          "text": "B,S",
+          "points": 1
+        }
+      ]
+    },
+    {
+      "text": "Pāris, kuram bija 5 dēli, devās piknikā. Katram dēlam ir 7 māsas. Katrai māsai ir 3 mazuļi. Cik cilvēku devās piknikā? ",
+      "image": "quizzes/MasterQuiz/15jaut.jpg",
+      "description": "Kupla ģimenīte, bet piknikā devās tikai pāris",
+      "answer": {
+        "text": 2,
+        "description": "Tieši tā!",
+        "points": 1
+      }
+    },
+    {
+      "text": "Fermerim ir 5 siena čupas vienā laukā un 4 siena čupas otrā laukā. Cik siena čupas būs fermerim, ja viņš tās visas apvienos vienā laukā?",
+      "image": "quizzes/MasterQuiz/16jaut.jpg",
+      "description": "Viena liela liela čupa",
+      "answer": {
+        "text": 1,
+        "points": 1
+      }
+    },
+    {
+      "text": "Turpini: D,R,M,F,S,L,…",
+      "description": "Do, Re, Mi, Fa…",
+      "answers": [
+        {
+          "text": "S,D",
+          "points": 1
+        },
+        {
+          "text": "I,D",
+          "points": 0
+        },
+        {
+          "text": "J,K",
+          "points": 0
+        },
+        {
+          "text": "N,O",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "text": "Cik nejauši izvēlēti cilvēki atrodas telpā, ja varbūtība, ka diviem no viņiem ir dzimšanas diena vienā datumā ir 50%.",
+      "description": "Ieguglē “Birthday Paradox”",
+      "answers": [
+        {
+          "text": "23",
+          "description": "Varbūtības ir tava stiprā puse!",
+          "points": 1
+        },
+        {
+          "text": "91",
+          "points": 0
+        },
+        {
+          "text": "183",
+          "points": 0
+        },
+        {
+          "text": "253",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "image": "quizzes/MasterQuiz/19jaut.jpg",
+      "description": "Šis bija grūti!",
+      "answer": {
+        "text": 38,
+        "points": 1
+      }
+    },
+    {
+      "text": "Vai tev patika šis tests?",
+      "image": "quizzes/MasterQuiz/20jaut.jpg",
+      "description": "Malacis, tu to izdarīji!",
+      "answers": [
+        {
+          "text": "Jā",
+          "points": 1
+        },
+        {
+          "text": "Protams",
+          "points": 1
+        },
+        {
+          "text": "Izcili",
+          "points": 1
+        },
+        {
+          "text": "Grūūtii",
+          "points": 1
+        }
+      ]
+    }
+  ]
+}
