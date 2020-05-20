@@ -22,8 +22,7 @@
                 </div>
             </div>
             <div class="row row--textfield" :class="{'mt-3': hasVisuals}" v-if="currentQuestion.text">
-                <div class="col-12">
-                    {{currentQuestion.text}}
+                <div class="col-12" v-html="currentQuestion.text">
                 </div>
             </div>
             <div class="row row--buttonfield" v-if="currentQuestion.answers">
@@ -35,7 +34,7 @@
             </div>
             <div class="row row--buttonfield" v-else-if="currentQuestion.answer">
                 <div class="col-12">
-                    <div class="input-group mb-3">
+                    <div class="input-group my-3" :class="{'mt-3': hasVisuals}">
                         <input class="form-control epic-and-cool-inputfield" type="text" @keyup.enter="checkAnswer"
                                v-model="currentAnswer"/>
                         <div class="input-group-append">
@@ -68,6 +67,7 @@
         },
         methods: {
             saveAnswer (answer) {
+                answer.description = answer.description || this.currentQuestion.description;
                 this.answers.push(answer);
                 if (this.currentQuestionIndex < this.questionCount - 1) {
                     this.currentQuestionIndex++;
@@ -84,6 +84,7 @@
                 answer.description = isCorrectAnswer ? this.currentQuestion.answer.description
                     : this.currentQuestion.description;
                 this.saveAnswer(answer);
+                this.currentAnswer = '';
             },
             getAnswerWidthClass (index) {
                 const answerCount = this.currentQuestion.answers.length;

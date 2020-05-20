@@ -23,20 +23,32 @@
                 </div>
             </div>
             <div v-if="currentQuestion">
-                <div class="row row--textfield mt-3" v-if="currentQuestion.text">
+                <div class="row row--content" v-if="hasVisuals">
                     <div class="col-12">
-                        {{currentQuestion.text}}
+                        <img :src="currentQuestion.image" class="row--content" v-if="currentQuestion.image"/>
+                        <iframe :src="currentQuestion.video"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen frameborder="0"
+                                height="400"
+                                v-else-if="currentQuestion.video"
+                                width="711"></iframe>
+                    </div>
+                </div>
+                <div class="row row--textfield mt-3" v-if="currentQuestion.text">
+                    <div class="col-12" v-html="currentQuestion.text">
                     </div>
                 </div>
                 <div class="row row--buttonfield" v-if="currentQuestion.answers">
                     <div class="btn--answers" v-for="(answer, index) in currentQuestion.answers"
-                         :class="[`btn--answers--${getAnswerButtonClass(answer)}`, getAnswerWidthClass(index)]" disabled>
+                         :class="[`btn--answers--${getAnswerButtonClass(answer)}`, getAnswerWidthClass(index)]"
+                         disabled>
                         {{answer.text}}
                     </div>
                 </div>
-                <div class="row row--buttonfield" v-else-if="currentQuestion.answer">
+                <div class="row row--buttonfield" :class="{'pt-3': hasVisuals}" v-else-if="currentQuestion.answer">
                     <div class="col-12">
-                        <input class="form-control epic-and-cool-inputfield epic-and-cool-inputfield--margin" type="text" v-model="answers[currentQuestionIndex].text" disabled/>
+                        <input class="form-control epic-and-cool-inputfield epic-and-cool-inputfield--margin"
+                               type="text" v-model="answers[currentQuestionIndex].text" disabled/>
                     </div>
                 </div>
             </div>
@@ -165,6 +177,9 @@
             },
             totalPoints () {
                 return this.quiz.questions.map(this.getMostValuableAnswer).map(a => a.points).reduce((s, p) => s + p);
+            },
+            hasVisuals () {
+                return !!(this.currentQuestion.image || this.currentQuestion.video);
             }
         }
     };

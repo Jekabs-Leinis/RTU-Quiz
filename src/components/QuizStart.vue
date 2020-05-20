@@ -16,7 +16,7 @@
             <quiz-stats/>
         </div>
         <div class="fixed-footer fixed-footer--textmod">
-            <span>Jēkabs Leinis, Rūdolfs Agris Stilve, Agnis Salmiņš priekš DIP221 Web-lietojumu izstrāde Internetam</span> <!-- JĀ ES ZINU KA ŠIS IR BRIESMĪGI UN NAV TAS KĀ TAS BŪTU JĀDARA -->
+            <span>Jēkabs Leinis, Rūdolfs Agris Stilve, Agnis Salmiņš priekš DIP221 Web-lietojumu izstrāde Internetam</span>
         </div>
     </div>
 </template>
@@ -33,7 +33,8 @@
             return {
                 quiz: null,
                 quizList: [
-                    { name: 'Test quiz', url: 'test' }
+                    { name: 'Test quiz', url: 'test' },
+                    { name: 'Tests par matemātiku', url: 'MasterQuiz' }
                 ],
                 selectedQuizUrl: '',
             };
@@ -56,9 +57,6 @@
                     console.table(response);
                 });
             },
-            viewStats () {
-
-            }
         },
         watch: {
             selectedQuizUrl () {
