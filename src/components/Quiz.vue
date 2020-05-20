@@ -79,8 +79,10 @@
                 const answer = new Answer();
                 answer.text = this.currentAnswer;
                 // noinspection EqualityComparisonWithCoercionJS
-                answer.points = (this.currentQuestion.answer.text == this.currentAnswer)
-                    ? this.currentQuestion.answer.points : 0;
+                const isCorrectAnswer = this.currentQuestion.answer.text == this.currentAnswer;
+                answer.points = isCorrectAnswer ? this.currentQuestion.answer.points : 0;
+                answer.description = isCorrectAnswer ? this.currentQuestion.answer.description
+                    : this.currentQuestion.description;
                 this.saveAnswer(answer);
             },
             getAnswerWidthClass (index) {

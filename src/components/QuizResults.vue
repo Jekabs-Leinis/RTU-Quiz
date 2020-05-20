@@ -41,8 +41,8 @@
                 </div>
             </div>
             <div v-if="answers[currentQuestionIndex].description" class="row row--descriptionfield"
-                 :class="`row--descriptionfield--${getAnswerButtonClass(answers[currentQuestionIndex])}`">
-                {{answers[currentQuestionIndex].description}}
+                 :class="`row--descriptionfield--${getAnswerButtonClass(answers[currentQuestionIndex])}`"
+                 v-html="answers[currentQuestionIndex].description">
             </div>
             <div class="row row--answers-lower">
                 <div class="col-12">
